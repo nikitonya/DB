@@ -96,17 +96,17 @@ def request5(cnx):
         print(f"{artist}, {name}, {count}")
     cursor.close()
 
-def request6(cnx):
-    cursor = cnx.cursor()
-    query = ("""SELECT title as "Альбом", min(length) as "MIN", avg(length) as "AVERAGE", max(length) as "MAX" FROM album
-    JOIN track using(album_id)
-    GROUP BY title""")
-    cursor.execute(query)
-
-    print("#6. Вывести информацию о минимальной, средней и максимальной продолжительности альбомов.\n")
-    for title, min, avg, max in cursor:
-        print(f"Title: {title} \t Min: {min}\t Avg: {avg}\t Max: {max}")
-    cursor.close()
+# def request6(cnx):
+#     cursor = cnx.cursor()
+#     query = ("""SELECT title as "Альбом", min(length) as "MIN", avg(length) as "AVERAGE", max(length) as "MAX" FROM album
+#     JOIN track using(album_id)
+#     GROUP BY title""")
+#     cursor.execute(query)
+#
+#     print("#6. Вывести информацию о минимальной, средней и максимальной продолжительности альбомов.\n")
+#     for title, min, avg, max in cursor:
+#         print(f"Title: {title} \t Min: {min}\t Avg: {avg}\t Max: {max}")
+#     cursor.close()
 
 def request6(cnx):
     cursor = cnx.cursor()
